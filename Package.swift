@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "IdentityVerification",
-            targets: ["IdentityVerification"]
+            targets: ["IdentityVerificationiOSSDK"]
         )
     ],
     targets: [
