@@ -1,0 +1,197 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.3 effective-4.1.50 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name IdentityVerificationiOSSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+import Foundation
+@_exported import IdentityVerificationiOSSDK
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class IdentityVerificationView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var verificationToken: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var brand: IdentityVerificationiOSSDK.LivenessBrand?
+  @_Concurrency.MainActor @preconcurrency public var flow: IdentityVerificationiOSSDK.LivenessFlow?
+  @_Concurrency.MainActor @preconcurrency public var theme: IdentityVerificationiOSSDK.LivenessTheme?
+  @_Concurrency.MainActor @preconcurrency public var localization: IdentityVerificationiOSSDK.LivenessLocalization?
+  @_Concurrency.MainActor @preconcurrency public var captureText: [Swift.String : Swift.String]?
+  @_Concurrency.MainActor @preconcurrency public var onSuccess: ((IdentityVerificationiOSSDK.LivenessResultModel) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onFail: ((IdentityVerificationiOSSDK.LivenessResultModel) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onError: ((IdentityVerificationiOSSDK.LivenessErrorModel) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onCancel: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onAnalysisComplete: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onScreenChange: ((IdentityVerificationiOSSDK.LivenessScreenType?) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onContinue: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onSessionStatusChange: ((IdentityVerificationiOSSDK.LivenessSessionStatus?) -> Swift.Void)?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, verificationToken: Swift.String, brand: IdentityVerificationiOSSDK.LivenessBrand? = nil, flow: IdentityVerificationiOSSDK.LivenessFlow? = nil, theme: IdentityVerificationiOSSDK.LivenessTheme? = nil, localization: IdentityVerificationiOSSDK.LivenessLocalization? = nil, captureText: [Swift.String : Swift.String]? = nil, onSuccess: ((IdentityVerificationiOSSDK.LivenessResultModel) -> Swift.Void)? = nil, onFail: ((IdentityVerificationiOSSDK.LivenessResultModel) -> Swift.Void)? = nil, onError: ((IdentityVerificationiOSSDK.LivenessErrorModel) -> Swift.Void)? = nil, onCancel: (() -> Swift.Void)? = nil, onAnalysisComplete: (() -> Swift.Void)? = nil, onScreenChange: ((IdentityVerificationiOSSDK.LivenessScreenType?) -> Swift.Void)? = nil, onSessionStatusChange: ((IdentityVerificationiOSSDK.LivenessSessionStatus?) -> Swift.Void)? = nil, onContinue: (() -> Swift.Void)? = nil)
+  #endif
+  @objc deinit
+}
+extension IdentityVerificationiOSSDK.IdentityVerificationView : WebKit.WKScriptMessageHandler {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+}
+extension IdentityVerificationiOSSDK.IdentityVerificationView : WebKit.WKUIDelegate {
+}
+extension IdentityVerificationiOSSDK.IdentityVerificationView : WebKit.WKNavigationDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
+  #endif
+}
+@_hasMissingDesignatedInitializers public class LivenessBrand : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class LivenessErrorModel : Swift.Decodable {
+  public var stage: Swift.String?
+  public var message: Swift.String?
+  @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessFlow : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(skipIntro: Swift.Bool? = nil, skipPrepare: Swift.Bool? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessLocalization : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(intro: IdentityVerificationiOSSDK.LivenessLocalizationIntro? = nil, prepare: IdentityVerificationiOSSDK.LivenessLocalizationPrepare? = nil, starting: IdentityVerificationiOSSDK.LivenessLocalizationPageElements? = nil, processing: IdentityVerificationiOSSDK.LivenessLocalizationPageElements? = nil, success: IdentityVerificationiOSSDK.LivenessLocalizationResultElements? = nil, fail: IdentityVerificationiOSSDK.LivenessLocalizationResultElements? = nil, cameraPermission: IdentityVerificationiOSSDK.LivenessLocalizationPageElements? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessLocalizationIntro : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(eyebrow: Swift.String? = nil, title: Swift.String? = nil, body: Swift.String? = nil, cta: Swift.String? = nil, trustLabel: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessLocalizationPrepare : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(eyebrow: Swift.String? = nil, title: Swift.String? = nil, tips: [IdentityVerificationiOSSDK.LivenessLocalizationPageElements]? = nil, cta: Swift.String? = nil, backLabel: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessLocalizationPageElements : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(title: Swift.String? = nil, body: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessLocalizationResultElements : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(title: Swift.String? = nil, body: Swift.String? = nil, cta: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class LivenessResultModel : Swift.Decodable {
+  public var id: Swift.String?
+  public var status: Swift.String?
+  public var failReason: Swift.String?
+  public var createdTime: Swift.String?
+  public var completedTime: Swift.String?
+  @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public enum LivenessScreenType : Swift.String {
+  case intro
+  case prepare
+  case capture
+  case processing
+  case success
+  case fail
+  case error
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SessionStatus : Swift.String, Swift.Decodable {
+  case completed
+  case expired
+  case invalid
+  case ready
+  case readyRetryLimitExceeded
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class LivenessSessionStatus : Swift.Decodable {
+  public var status: IdentityVerificationiOSSDK.SessionStatus?
+  public var stage: Swift.String?
+  public var message: Swift.String?
+  public var isEligible: Swift.Bool?
+  @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessTheme : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(colors: IdentityVerificationiOSSDK.LivenessThemeColors? = nil, shape: IdentityVerificationiOSSDK.LivenessThemeShape? = nil, typography: IdentityVerificationiOSSDK.LivenessThemeTypography? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessThemeColors : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(primary: Swift.String? = nil, secondary: Swift.String? = nil, heading: Swift.String? = nil, brandTint: Swift.String? = nil, body: Swift.String? = nil, muted: Swift.String? = nil, line: Swift.String? = nil, bg: Swift.String? = nil, card: Swift.String? = nil, primaryText: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessThemeShape : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(radius: Swift.Double? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessThemeTypography : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(fontFamily: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LivenessThemeLayout : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(width: Swift.Double? = nil, fullscreen: Swift.Bool? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension IdentityVerificationiOSSDK.LivenessScreenType : Swift.Equatable {}
+extension IdentityVerificationiOSSDK.LivenessScreenType : Swift.Hashable {}
+extension IdentityVerificationiOSSDK.LivenessScreenType : Swift.RawRepresentable {}
+extension IdentityVerificationiOSSDK.SessionStatus : Swift.Equatable {}
+extension IdentityVerificationiOSSDK.SessionStatus : Swift.Hashable {}
+extension IdentityVerificationiOSSDK.SessionStatus : Swift.RawRepresentable {}

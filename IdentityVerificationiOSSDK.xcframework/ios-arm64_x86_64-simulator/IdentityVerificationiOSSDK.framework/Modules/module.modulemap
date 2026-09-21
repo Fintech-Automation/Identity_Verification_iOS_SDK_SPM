@@ -1,0 +1,11 @@
+framework module IdentityVerificationiOSSDK {
+  umbrella header "IdentityVerificationiOSSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module IdentityVerificationiOSSDK.Swift {
+  header "IdentityVerificationiOSSDK-Swift.h"
+  requires objc
+}
